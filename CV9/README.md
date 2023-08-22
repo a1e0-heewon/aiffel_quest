@@ -47,5 +47,10 @@ image = cv2.drawContours(image, [rect_grad_cam], 0, (255,0,0), 2)
 
 plt.imshow(image)
 plt.show()
+
+res1= cam(cam_model, item)
+res2 = grad_cam(cam_model, item)
+print("labelnumber: ",item['label'])
+print("model1: {:.3f}    model2: {:.3f}".format(res1, res2))
 ```
 gradcam과 cam으로 만든 바운딩박스의 이미지 비교와 iou 값 비교를 해주셨으면 좀 더 두 방식의 차이를 알기 쉬웠을것 같습니다.
